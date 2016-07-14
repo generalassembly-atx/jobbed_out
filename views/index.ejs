@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome to <%= title %></h1>
+
+    <ul>
+      <% jobs.forEach(function(job) { %>
+        <li>
+          <h3><a href="<%= job.hyperlink %>"><%= job.title %></a> at <%= job.employer %></h3>
+          <p><%= job.description %></p>
+          <button class="btn btn-danger">Remove Job</button>
+        </li>
+      <% }) %>
+    </ul>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-job-modal">
+      Add Job
+    </button>
+
+    <div id="add-job-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Add a Job</h4>
+          </div>
+          <div class="modal-body">
+            <form id="add-job-form">
+              <input type="text" class="form-control" name="title" placeholder="Job Title">
+              <input type="text" class="form-control" name="employer" placeholder="Employer">
+              <input type="text" class="form-control" name="hyperlink" placeholder="Hyperlink">
+              <textarea class="form-control" name="description" placeholder="Job Description"></textarea>
+              <input type="submit" class="btn btn-submit" value="Add Job!">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
