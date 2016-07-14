@@ -8,15 +8,9 @@
   <body>
     <h1>Welcome to <%= title %></h1>
 
-    <ul>
-      <% jobs.forEach(function(job) { %>
-        <li>
-          <h3><a href="<%= job.hyperlink %>"><%= job.title %></a> at <%= job.employer %></h3>
-          <p><%= job.description %></p>
-          <button class="btn btn-danger">Remove Job</button>
-        </li>
-      <% }) %>
-    </ul>
+    <section id="jobs">
+
+    </section>
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-job-modal">
@@ -32,11 +26,11 @@
           </div>
           <div class="modal-body">
             <form id="add-job-form">
-              <input type="text" class="form-control" name="title" placeholder="Job Title">
-              <input type="text" class="form-control" name="employer" placeholder="Employer">
-              <input type="text" class="form-control" name="hyperlink" placeholder="Hyperlink">
-              <textarea class="form-control" name="description" placeholder="Job Description"></textarea>
-              <input type="submit" class="btn btn-submit" value="Add Job!">
+              <input type="text" class="form-control" name="title" placeholder="Job Title" id="title">
+              <input type="text" class="form-control" name="employer" placeholder="Employer" id="employer">
+              <input type="text" class="form-control" name="hyperlink" placeholder="Hyperlink" id="hyperlink">
+              <textarea class="form-control" name="description" placeholder="Job Description" id="description"></textarea>
+              <input type="submit" class="btn btn-submit btn-create" value="Add Job!">
             </form>
           </div>
         </div>

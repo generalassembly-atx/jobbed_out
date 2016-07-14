@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-mongoose.connect(process.env.JOBBED_OUT_DB);
+mongoose.connect(process.env.jobbed_out_db);
 
 var routes = require('./routes/index');
 var jobs = require('./routes/api/v1/jobs');

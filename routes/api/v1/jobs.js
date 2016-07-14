@@ -11,20 +11,20 @@ router.get('/', function(req, res, next) {
     searchParams.employer = new RegExp(req.query.searchEmployer, "i")
   }
   // Query the Job model for all jobs
-  Job.find(searchParams, function(err, jobs) {
+  Job.find({}, function(err, jobs) {
     // Render the jobs in JSON format
     res.status(200).json(jobs);
   });
 });
 
-/* GET home page. */
+/* GET /api/v1/concerts/:id */
 router.get('/:id', function(req, res, next) {
   Job.findById(req.params.id, function(err, job) {
     res.status(200).json(job);
   });
 });
 
-/* GET home page. */
+/* POST /api/v1/concerts */
 router.post('/', function(req, res, next) {
   Job.create({
     title: req.body.title,
@@ -36,7 +36,7 @@ router.post('/', function(req, res, next) {
   });
 });
 
-/* GET home page. */
+/* PUT /api/v1/concerts/:id */
 router.put('/:id', function(req, res, next) {
   Job.findByIdAndUpdate(
     req.params.id,
@@ -47,7 +47,7 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
-/* GET home page. */
+/* DELETE /api/v1/concerts/:id */
 router.delete('/:id', function(req, res, next) {
   Job.findByIdAndRemove(req.params.id, function(err, job) {
     res.status(200).json(job);
