@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Welcome to <%= title %></h1>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <h1>Jobs + Venues</h1>
+  <section id="jobs">
+  </section>
 
-    <ul>
-      <% jobs.forEach(function(job) { %>
-        <li>
-          <h3><a href="<%= job.hyperlink %>"><%= job.title %></a> at <%= job.employer %></h3>
-          <p><%= job.description %></p>
-          <button class="btn btn-danger">Remove Job</button>
-        </li>
-      <% }) %>
-    </ul>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-job-modal">
-      Add Job
-    </button>
-
-    <div id="add-job-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Add a Job</h4>
-          </div>
-          <div class="modal-body">
-            <form id="add-job-form">
-              <input type="text" class="form-control" name="title" placeholder="Job Title">
-              <input type="text" class="form-control" name="employer" placeholder="Employer">
-              <input type="text" class="form-control" name="hyperlink" placeholder="Hyperlink">
-              <textarea class="form-control" name="description" placeholder="Job Description"></textarea>
-              <input type="submit" class="btn btn-submit" value="Add Job!">
-            </form>
-          </div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">+ Create Job</button>
+  ​
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Create a New Job</h4>
         </div>
+        <div class="modal-body">
+         <form name="create-form" id="create-form">
+           <div class="form-group">
+             <label for="title" class="control-label">Title:</label>
+             <input type="text" class="form-control" id="title">
+           </div>
+           <div class="form-group">
+             <label for="employer" class="control-label">Employer:</label>
+             <input type="text" class="form-control" id="employer">
+           </div>
+           <div class="form-group">
+           <label for="hyperlink" class="control-label">Hyperlink:</label>
+             <input type="text" class="form-control" id="hyperlink">
+           </div>
+          <div class="form-group">
+           <label for="description" class="control-label">Description:</label>
+             <input type="text" class="form-control" id="description">
+           </div>
+         </form>
+       </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary btn-create">Create Job</button>
       </div>
     </div>
+  </div>
+</div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="/javascripts/script.js"></script>
-  </body>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/script.js"></script>
+
+
+
+</body>
 </html>

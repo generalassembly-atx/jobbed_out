@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     searchParams.employer = new RegExp(req.query.searchEmployer, "i")
   }
   // Query the Job model for all jobs
-  Job.find(searchParams, function(err, jobs) {
+  Job.find({}, function(err, jobs) {
     // Render the jobs in JSON format
     res.status(200).json(jobs);
   });
