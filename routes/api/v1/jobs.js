@@ -12,10 +12,10 @@ router.get('/', function(req, res, next) {
   }
   // Query the Job model for all jobs
   Job.find(searchParams, function(err, jobs) {
-    // Render the jobs in JSON format
     res.status(200).json(jobs);
   });
 });
+
 
 /* GET home page. */
 router.get('/:id', function(req, res, next) {
