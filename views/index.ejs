@@ -7,19 +7,20 @@
   </head>
   <body>
     <h1>Welcome to <%= title %></h1>
-
-    <ul>
-      <% jobs.forEach(function(job) { %>
-        <li>
-          <h3><a href="<%= job.hyperlink %>"><%= job.title %></a> at <%= job.employer %></h3>
-          <p><%= job.description %></p>
-          <button class="btn btn-danger">Remove Job</button>
-        </li>
-      <% }) %>
-    </ul>
+    <section id="jobList">
+      <ul>
+        <!-- <% jobs.forEach(function(job) { %> -->
+          <li>
+            <h3 class="jobTitle"><a href="joburl"><!-- <%= job.title %> --></a> at <!-- <%= job.employer %> --></h3>
+            <p><!-- <%= job.description %> --></p>
+            <button class="btn btn-danger" id="removeJob">Remove Job</button>
+          </li>
+        <!-- <% }) %> -->
+      </ul>
+    </section>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-job-modal">
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-job-modal" id="createJob">
       Add Job
     </button>
 
@@ -31,11 +32,11 @@
             <h4 class="modal-title">Add a Job</h4>
           </div>
           <div class="modal-body">
-            <form id="add-job-form">
-              <input type="text" class="form-control" name="title" placeholder="Job Title">
-              <input type="text" class="form-control" name="employer" placeholder="Employer">
-              <input type="text" class="form-control" name="hyperlink" placeholder="Hyperlink">
-              <textarea class="form-control" name="description" placeholder="Job Description"></textarea>
+            <form id="add-job-form" action="/api/v1/jobs" method="post">
+              <input type="text" class="form-control" name="title" id="job-title" placeholder="Job Title">
+              <input type="text" class="form-control" name="employer" id="employer" placeholder="Employer">
+              <input type="text" class="form-control" name="hyperlink" id="hyperlink" placeholder="Hyperlink">
+              <textarea class="form-control" name="description" id="description" placeholder="Job Description"></textarea>
               <input type="submit" class="btn btn-submit" value="Add Job!">
             </form>
           </div>
