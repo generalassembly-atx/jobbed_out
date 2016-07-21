@@ -21,3 +21,7 @@ We've already given you:
 ## Bonus
 - Allow users to update a job to change it, again via AJAX.
 - Create a form that allows users to search for jobs by Title (using the `searchTitle` query param) or by Employer (using the `searchEmployer` query param). The `GET /api/v1/jobs` route is already built out to accept these types of search queries, you just need to build the frontend (again, with AJAX).
+
+## Licensing
+All content is licensed under a CC­BY­NC­SA 4.0 license.
+All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
