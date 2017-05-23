@@ -2,7 +2,7 @@ require('dotenv').config();
 
 var mongoose = require('mongoose');
 
-mongoose.connect(process.env.JOBBED_OUT_DB);
+mongoose.connect(process.env.jobbed_out_db);
 
 var Job = require('./models/job');
 
